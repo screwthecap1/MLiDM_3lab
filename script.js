@@ -53,7 +53,6 @@ function validateElement(masA, masB, masOfMas) {
 
   return isValid;
 }
-
 /**
  * Проверка, являются ли отношения функцией
  * @param masA
@@ -69,8 +68,8 @@ function check(masA, masB, masOfMas, type) {
   for (let i = 0; i < masOfMas.length; ++i) {
     let elem = masOfMas[i].split(" ");
     for (let j = 0; j < elem.length; ++j) {
-      if (type == "AB") (x = j), (y = i);
-      else (x = i), (y = j);
+      if (type == "AB") (x = i), (y = j);
+      else (x = j), (y = i);
       if (elem[j] == 1) {
         if (mp.has(masA[x]) == 0) mp.set(masA[x], new Set());
         mp.get(masA[x]).add(masB[y]);
