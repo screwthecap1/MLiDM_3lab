@@ -98,30 +98,6 @@ function main() {
   let masA = document.getElementById("id_masA").value;
   let masB = document.getElementById("id_masB").value;
   let masOfMas = document.getElementById("id_masOfMas").value;
-  // Проверка на типы данных
-  if (
-    !Array.isArray(masA) ||
-    !Array.isArray(masB) ||
-    !Array.isArray(masOfMas)
-  ) {
-    document.getElementById("result").innerHTML = "Неверный тип данных";
-    return;
-  }
-  for (let i = 0; i < masOfMas.length; i++) {
-    if (!Array.isArray(masOfMas[i])) {
-      document.getElementById("result").innerHTML = "Неверный тип данных";
-      return;
-    }
-    for (let j = 0; j < masOfMas[i].length; j++) {
-      if (
-        typeof masOfMas[i][j] !== "number" ||
-        (masOfMas[i][j] !== 0 && masOfMas[i][j] !== 1)
-      ) {
-        document.getElementById("result").innerHTML = "Неверный тип данных";
-        return;
-      }
-    }
-  }
   document.getElementById("result").innerHTML = "Результат: <br>";
   masA = masA.split(" ");
   masB = masB.split(" ");
@@ -148,3 +124,4 @@ function main() {
   masB = null;
   masOfMas = null;
 }
+
